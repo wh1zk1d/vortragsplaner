@@ -7,7 +7,7 @@
 ?>
 
 <div class="container mt-5">
-  <h2>Vortrag hinzufügen <a href="index.php" class="btn btn-secondary btn-sm ml-4">Zurück</a></h2>
+  <h3>Vortrag hinzufügen <a href="index.php" class="btn btn-secondary btn-sm ml-4">Zurück</a></h3>
 
   <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="display:none;">
     <strong>Bazinga!</strong> Vortrag gespeichert

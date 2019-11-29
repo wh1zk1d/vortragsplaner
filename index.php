@@ -2,7 +2,7 @@
 <?php include('partials/header.php'); ?>
 
 <div class="container mt-5">
-  <h2>Vorträge <a href="add_talk.php" class="btn btn-success btn-sm ml-4" title="Hinzufügen">Hinzufügen</a></h2>
+  <h3>Vorträge <a href="add_talk.php" class="btn btn-success btn-sm ml-4" title="Hinzufügen">Hinzufügen</a></h3>
 
   <?php
     $filters = array('gehalten', 'titel', 'kategorie', 'nummer');
@@ -25,22 +25,41 @@
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=titel">Thema</a></th>
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=kategorie">Themenbereich</a></th>
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=gehalten">Zul. gehalten</a></th>
+          <th>Bearbeiten</th>
         </tr>
       </thead>
       <tbody>
-        <?php foreach($talks as $talk): ?>
-          <tr>
+        <?php
+          $today = date('Y-m-d');
+
+          $green = date('Y-m-d', strtotime($today . ' -24 months'));
+          $orange = date('Y-m-d', strtotime($today . ' -48 months'));
+
+          foreach($talks as $talk):
+            $date = date('Y-m-d', strtotime($talk['gehalten']));
+
+            $class = "";
+
+            if ($date > $green) {
+              $class = "table-success";
+            } else if ($date < $green && $date > $orange) {
+              $class = "table-warning";
+            } else if ($date < $orange) {
+              $class = "table-danger";
+            }
+        ?>
+          <tr class="<?php echo $class; ?>">
             <td><?php echo $talk['nummer']; ?></td>
             <td><?php echo $talk['titel']; ?></td>
             <td><?php echo $talk['kategorie']; ?></td>
             <td>
               <?php
                 if ($talk['gehalten'] != NULL) {
-                  $date = date('d.m.Y', strtotime($talk['gehalten']));
-                  echo $date;
+                  echo date('d.m.Y', strtotime($talk['gehalten']));
                 }
               ?>
             </td>
+            <td><a href="#" class="edit" data-target="<?php echo $talk['id']; ?>"><i class="material-icons" style="font-size:18px;">edit</i></a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

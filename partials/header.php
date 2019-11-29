@@ -17,7 +17,7 @@
   <!-- HEADER -->
   <header class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1>JW Vortragsplaner</h1>
+      <h2>JW Vortragsplaner</h2>
     </div>
   </header>
   <!-- / HEADER -->
