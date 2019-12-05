@@ -34,3 +34,23 @@
 thead a {
   color: inherit;
 }
+
+.status-dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
+
+.status-dot.green {
+  background: #a3e157;
+}
+
+.status-dot.red {
+  background: lightcoral;
+}
+
+.status-dot.yellow {
+  background: #ffc600;
+}

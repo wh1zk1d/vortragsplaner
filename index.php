@@ -41,16 +41,16 @@
             $class = "";
 
             if ($date > $green) {
-              $class = "table-success";
+              $class = "green";
             } else if ($date < $green && $date > $orange) {
-              $class = "table-warning";
+              $class = "yellow";
             } else if ($date < $orange) {
-              $class = "table-danger";
+              $class = "red";
             }
         ?>
-          <tr class="<?php echo $class; ?>">
+          <tr>
             <td><?php echo $talk['nummer']; ?></td>
-            <td><?php echo $talk['titel']; ?></td>
+            <td><span class="status-dot <?php echo $class; ?>"></span> <?php echo $talk['titel']; ?></td>
             <td><?php echo $talk['kategorie']; ?></td>
             <td>
               <?php
@@ -67,4 +67,5 @@
   </div>
 </div>
 
+<script src="public/js/scripts.js"></script>
 <?php include('partials/footer.php'); ?> 
