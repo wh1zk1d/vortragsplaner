@@ -56,6 +56,8 @@
               <?php
                 if ($talk['gehalten'] != NULL) {
                   echo date('d.m.Y', strtotime($talk['gehalten']));
+                } else {
+                  echo "–";
                 }
               ?>
             </td>
