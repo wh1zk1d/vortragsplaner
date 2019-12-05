@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JW Vortragsplaner</title>
+  <link rel="icon" href="favicon.gif" />
   <link rel="stylesheet" href="public/css/bootstrap.min.css">
   <link rel="stylesheet" href="public/css/styles.css">
   <link rel="stylesheet" href="public/flatpickr/flatpickr.min.css">
