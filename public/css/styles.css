@@ -54,3 +54,16 @@ thead a {
 .status-dot.yellow {
   background: #ffc600;
 }
+
+.legend {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.legend .status-dot {
+  margin-right: 6px;
+}
+
+.legend .status-dot:not(:first-child) {
+  margin-left: 16px;
+}

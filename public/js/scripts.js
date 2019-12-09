@@ -1,6 +1,8 @@
-// EDIT TALK
+// GET DOM objects
+const pdfBtn = document.querySelector('.pdf-export')
 const editBtn = document.querySelectorAll('.edit')
 
+// EDIT TALK
 const editTalk = async (talk, newDate) => {
   const data = JSON.stringify({ talk: talk, date: newDate })
 
@@ -22,6 +24,10 @@ const editTalk = async (talk, newDate) => {
 }
 
 editBtn.forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault()
+  })
+
   const targetID = btn.dataset.target
   const datepicker = flatpickr(btn, {
     locale: 'de',
@@ -30,3 +36,30 @@ editBtn.forEach(btn => {
     }
   })
 })
+
+// PDF EXPORT
+if (pdfBtn) {
+  pdfBtn.addEventListener('click', function() {
+    const doc = new jsPDF()
+
+    const table = document.getElementById('table')
+    const aTable = doc.autoTableHtmlToJson(table, true)
+
+    let data = []
+
+    const rows = aTable.rows
+    rows.forEach(row => {
+      row.splice(4, 1)
+
+      data = [...data, row.map(raw => raw.content)]
+    })
+
+    doc.autoTable({
+      theme: 'plain',
+      head: [['Nr.', 'Thema', 'Themenbereich', 'Zul. gehalten']],
+      body: data
+    })
+
+    doc.save('vortragsliste.pdf')
+  })
+}

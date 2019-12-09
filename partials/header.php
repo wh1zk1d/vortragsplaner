@@ -13,6 +13,9 @@
   <script src="public/flatpickr/de.js"></script>
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/bootstrap.min.js"></script>
+  <script src="public/js/jspdf.min.js"></script>
+  <!-- <script src="public/js/html2canvas.min.js"></script> -->
+  <script src="public/js/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
   <!-- HEADER -->

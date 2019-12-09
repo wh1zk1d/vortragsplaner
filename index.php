@@ -2,7 +2,12 @@
 <?php include('partials/header.php'); ?>
 
 <div class="container mt-5">
-  <h3>Vorträge <a href="add_talk.php" class="btn btn-success btn-sm ml-4" title="Hinzufügen">Hinzufügen</a></h3>
+  <h3>Vorträge <a href="add_talk.php" class="btn btn-success btn-sm ml-4 mr-3" title="Hinzufügen">Hinzufügen</a><button type="button" class="btn btn-secondary btn-sm pdf-export">PDF exportieren</button></h3>
+  <div class="legend">
+    <span class="status-dot red"></span>länger als 4 Jahre nicht gehört
+    <span class="status-dot yellow"></span>länger als 2 Jahre nicht gehört
+    <span class="status-dot green"></span>letzte 2 Jahre nicht gehört
+  </div>
 
   <?php
     $filters = array('gehalten', 'titel', 'kategorie', 'nummer');
@@ -18,7 +23,7 @@
   ?>
 
   <div class="table-responsive">
-    <table class="table table-striped table-hover mt-4">
+    <table class="table table-striped table-hover mt-4" id="table">
       <thead>
         <tr>
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=nummer">Nr.</a></th>
@@ -69,5 +74,4 @@
   </div>
 </div>
 
-<script src="public/js/scripts.js"></script>
 <?php include('partials/footer.php'); ?> 
