@@ -6,6 +6,12 @@
     url(../fonts/material-icons.woff) format('woff');
 }
 
+/* JUMBOTRON */
+.jumbotron {
+  background-color: #1c2631;
+  color: #fff;
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
