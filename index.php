@@ -29,7 +29,7 @@
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=nummer">Nr.</a></th>
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=titel">Thema</a></th>
           <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=kategorie">Themenbereich</a></th>
-          <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=gehalten">Zul. gehalten</a></th>
+          <th><a href="http://localhost:8888/vortragsplaner/index.php?orderBy=gehalten">Gehalten</a></th>
           <th>Bearbeiten</th>
         </tr>
       </thead>
@@ -66,7 +66,10 @@
                 }
               ?>
             </td>
-            <td><a href="#" class="edit" data-target="<?php echo $talk['id']; ?>"><i class="material-icons" style="font-size:18px;">edit</i></a></td>
+            <td>
+              <a href="#" class="edit" data-target="<?php echo $talk['id']; ?>"><i class="material-icons" style="font-size:18px;">edit</i></a>
+              <a href="#" class="delete" data-target="<?php echo $talk['id']; ?>"><i class="material-icons" style="font-size:18px;margin-left:10px;">delete</i></a>
+            </td>
           </tr>
         <?php endforeach; ?>
       </tbody>
